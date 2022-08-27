@@ -1,14 +1,13 @@
 package easy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ValidateSubsequence {
 
     public static void main(String[] args) {
-        List<Integer> array = new ArrayList<>(Arrays.asList(5, 1, 22, 25, 6, -1, 8, 10));
-        List<Integer> sequence = new ArrayList<>(Arrays.asList(1, 6, -1, 10));
+        var array = Arrays.asList(5, 1, 22, 25, 6, -1, 8, 10);
+        var sequence = Arrays.asList(1, 6, -1, 10);
 
         boolean result = isValidSubsequence(array, sequence);
 
@@ -19,19 +18,15 @@ public class ValidateSubsequence {
         System.out.println(result);
     }
 
-    public static boolean isValidSubsequence(List<Integer> array,
-                                             List<Integer> sequence) {
-        int found = 0;
+    public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
+        int equalsElement = 0;
 
         for (int i=0;i<array.size();i++) {
-            if (array.get(i)==sequence.get(found)) {
-                found++;
+            if (array.get(i)==sequence.get(equalsElement)) {
+                equalsElement++;
             }
 
-            System.out.print("Item: " + array.get(i));
-            System.out.println(", found " + found + " of " + sequence.size());
-
-            if (found==sequence.size()) {
+            if (equalsElement==sequence.size()) {
                 return true;
             }
         }
