@@ -14,7 +14,7 @@ class RemoveDuplicatesFromLinkedList {
         printResult(result);
     }
 
-    public List<Integer> getNodesInArray(RemoveDuplicatesFromLinkedList.LinkedList ll) {
+    public static List<Integer> getNodesInArray(RemoveDuplicatesFromLinkedList.LinkedList ll) {
         List<Integer> nodes = new ArrayList<Integer>();
         RemoveDuplicatesFromLinkedList.LinkedList current = ll;
         while (current != null) {
@@ -62,9 +62,9 @@ class RemoveDuplicatesFromLinkedList {
     }
 
     private static void printResult(LinkedList linkedList) {
-        while (linkedList != null) {
-            System.out.println(linkedList.value);
-            linkedList = linkedList.next;
+        var nodesInArray = getNodesInArray(linkedList);
+        for (int i=0; i < nodesInArray.size(); i++) {
+            System.out.println(nodesInArray.get(i));
         }
     }
 }
